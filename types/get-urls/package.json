@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "dependencies": {
+        "@types/normalize-url": "^1.9.1"
+    }
+}
