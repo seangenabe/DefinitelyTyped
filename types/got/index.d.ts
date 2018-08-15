@@ -152,7 +152,7 @@ declare namespace got {
         redirectUrls?: string[];
     }
 
-    type GotPromise<B extends Buffer | string | object> = Promise<Response<B>> & { cancel(): void };
+    type GotPromise<B extends Buffer | string | object> = Promise<Response<B>> & { cancel(): void } & GotEmitter;
 
     interface GotEmitter {
         addListener(event: 'request', listener: (req: http.ClientRequest) => void): this;

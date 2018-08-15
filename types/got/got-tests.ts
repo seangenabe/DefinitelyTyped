@@ -258,3 +258,14 @@ got('todomvc', {
 got(new url.URL('http://todomvc.com'));
 
 got(url.parse('http://todomvc.com'));
+
+const promise = got('todomvc.com')
+promise.on('request', r => req = r);
+promise.on('response', r => res = r);
+promise.on('redirect', (r, o) => {
+    res = r;
+    opts = o;
+    href = o.href;
+});
+promise.on('downloadProgress', p => progress = p);
+promise.on('uploadProgress', p => progress = p);
